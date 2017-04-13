@@ -118,13 +118,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62eaafc86586f44479747533cae3ac7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  iterationsPerSecond: 1
+  iterationsPerSecond: 36.5
   systemScale: 1e-10
+  smoothPosition: 1
   addSunLight: 1
   planetPrefab: {fileID: 1196450824814414, guid: 72edad763c14b60458310b249fb77409,
     type: 2}
   sunMat: {fileID: 2100000, guid: 95a4d5ddee552284a87a5257be376e67, type: 2}
   sunLight: {fileID: 1619632851373300, guid: 836b982b072eb9c48a68b9187f52fe36, type: 2}
+  tick: -1
 --- !u!4 &44060629
 Transform:
   m_ObjectHideFlags: 0
@@ -244,7 +246,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 15
+  orthographic size: 25
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2

@@ -15,7 +15,7 @@ public class PlanetManager : MonoBehaviour {
 	public Material sunMat;
 	public GameObject sunLight;
 	float timer = 0;
-	int tick = -1;
+	public int tick = -1;
 	List<StringReader> readers;
 	Dictionary<int, PlanetTransform> planets = new Dictionary<int, PlanetTransform>();
 
