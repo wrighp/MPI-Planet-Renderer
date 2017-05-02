@@ -6,14 +6,18 @@ using System;
 using System.IO;
 
 public class PlanetManager : MonoBehaviour {
+	public bool smoothPosition = true;
+	public float trailPersistTime = 1000f;
 
+	public int maxSpheres = 11;
 	public float iterationsPerSecond = 1f;
 	public float systemScale = .00000001f;
-	public bool smoothPosition = true;
 	public bool addSunLight = true;
 	public GameObject planetPrefab;
 	public Material sunMat;
 	public GameObject sunLight;
+
+	float trailCurrentTime = -1f;
 	float timer = 0;
 	public int tick = -1;
 	List<StringReader> readers;
@@ -63,6 +67,16 @@ public class PlanetManager : MonoBehaviour {
 					int id = int.Parse(parts[0]);
 					if(!planets.ContainsKey(id)){
 						GameObject go = (GameObject)GameObject.Instantiate(planetPrefab,transform,false);
+						if(id >= maxSpheres){
+							Destroy(go.GetComponent<Renderer>());
+							Destroy(go.GetComponent<MeshFilter>());
+						}
+						else{
+							Gradient gradient = new Gradient();
+							gradient.mode = GradientMode.Fixed;
+							gradient.colorKeys = new GradientColorKey[]{new GradientColorKey(Color.red,0)};
+							go.GetComponent<TrailRenderer>().colorGradient = gradient;
+						}
 						go.name = id.ToString();
 						planets.Add(id,new PlanetTransform(go.transform));
 						//If the sun
@@ -83,6 +97,16 @@ public class PlanetManager : MonoBehaviour {
 			}
 			tick++;
 		}
+		//If value is changed then change times on all trails in children
+		if (Math.Abs (trailPersistTime - trailCurrentTime) > float.Epsilon) {
+			trailCurrentTime = trailPersistTime;
+			var trails = GetComponentsInChildren<TrailRenderer> ();
+			for (int i = 0, trailsLength = trails.Length; i < trailsLength; i++) {
+				trails [i].time = trailCurrentTime;
+			}
+			Debug.Log("reset");
+		}
+
 		//Move objects
 		if(smoothPosition){
 			foreach(PlanetTransform pT in planets.Values){

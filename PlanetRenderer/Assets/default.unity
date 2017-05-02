@@ -118,6 +118,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62eaafc86586f44479747533cae3ac7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxMeshes: 11
   iterationsPerSecond: 36.5
   systemScale: 1e-10
   smoothPosition: 1
@@ -243,7 +244,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 1000
+  far clip plane: 100000
   field of view: 60
   orthographic: 1
   orthographic size: 25

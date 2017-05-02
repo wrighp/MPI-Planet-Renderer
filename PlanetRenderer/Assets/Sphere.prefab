@@ -20,7 +20,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4718333549989008}
   - component: {fileID: 33599921375674650}
-  - component: {fileID: 135350189917532916}
   - component: {fileID: 23557084550665432}
   - component: {fileID: 96954661469226084}
   m_Layer: 0
@@ -113,10 +112,10 @@ TrailRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Time: 100
+  m_Time: 1000
   m_Parameters:
     serializedVersion: 2
-    widthMultiplier: 0.2
+    widthMultiplier: 0.1
     widthCurve:
       serializedVersion: 2
       m_Curve:
@@ -177,17 +176,5 @@ TrailRenderer:
     numCapVertices: 0
     alignment: 0
     textureMode: 0
-  m_MinVertexDistance: 0.1
+  m_MinVertexDistance: 0.3
   m_Autodestruct: 0
---- !u!135 &135350189917532916
-SphereCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1196450824814414}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
