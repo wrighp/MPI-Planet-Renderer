@@ -104,7 +104,6 @@ public class PlanetManager : MonoBehaviour {
 			for (int i = 0, trailsLength = trails.Length; i < trailsLength; i++) {
 				trails [i].time = trailCurrentTime;
 			}
-			Debug.Log("reset");
 		}
 
 		//Move objects
