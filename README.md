@@ -1,5 +1,6 @@
 # MPI-Planet-Renderer
-Unity rendering tool for MPI planet simulation.
+Unity rendering tool for planet simulation using output log files. Log files are generated with a custom MPI program for use on an [IBM Bluegene/Q system](https://en.wikipedia.org/wiki/Blue_Gene). This is part of a larger project that benchmarks this simulation with various Bluegene/Q runtime parameters via [SLURM](https://slurm.schedmd.com/).
+
 
 Log files from ./orbit (having set #define OUTPUT_LOG 1) go into /Resources/Text/ folder to run in-editor.
 
